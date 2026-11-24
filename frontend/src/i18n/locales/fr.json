@@ -1,0 +1,243 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "services": "Services",
+    "contact": "Contact",
+    "appointment": "Prendre rendez-vous"
+  },
+  "hero": {
+    "badge": "Santé féminine",
+    "title": "Prenez soin de vous,",
+    "titleHighlight": "à chaque étape de votre vie",
+    "subtitle": "Un accompagnement bienveillant et personnalisé pour votre santé gynécologique.",
+    "ctaAppointment": "Prendre rendez-vous",
+    "ctaWhatsapp": "Nous contacter sur WhatsApp",
+    "ctaContact": "Nous contacter"
+  },
+  "about": {
+    "sectionTitle": "À propos de",
+    "doctorTitle": "Gynécologue Obstétricienne",
+    "description": "Spécialisée en gynécologie obstétrique, je vous accompagne à chaque étape de votre vie, avec professionnalisme et bienveillance.",
+    "learnMore": "En savoir plus",
+    "experience": "[À CONFIRMER] ans d'expérience",
+    "clinic": "Clinique [À CONFIRMER]"
+  },
+  "services": {
+    "sectionTitle": "Nos Services",
+    "sectionSubtitle": "Des soins personnalisés pour chaque étape de votre vie",
+    "items": {
+      "gyneco": {
+        "title": "Suivi gynécologique",
+        "description": "Consultations régulières, examens préventifs et suivi personnalisé de votre santé féminine."
+      },
+      "maternite": {
+        "title": "Grossesse & maternité",
+        "description": "Accompagnement complet tout au long de votre grossesse avec un suivi bienveillant et professionnel."
+      },
+      "reproductive": {
+        "title": "Santé reproductive",
+        "description": "Conseils et accompagnement pour toutes vos questions relatives à la santé reproductive."
+      },
+      "contraception": {
+        "title": "Contraception",
+        "description": "Conseils personnalisés et prescriptions adaptées à vos besoins et à votre mode de vie."
+      },
+      "conseils": {
+        "title": "Conseils personnalisés",
+        "description": "Un accompagnement adapté à chaque étape de votre vie féminine avec écoute et bienveillance."
+      }
+    }
+  },
+  "appointment": {
+    "sectionTitle": "Demande de rendez-vous",
+    "sectionSubtitle": "Remplissez le formulaire et nous vous contacterons pour convenir d'un rendez-vous.",
+    "responseNote": "Le cabinet vous contactera pour convenir d'un rendez-vous",
+    "fullName": "Nom complet",
+    "fullNamePlaceholder": "Votre nom complet",
+    "phoneNumber": "Numéro de téléphone",
+    "phoneNumberPlaceholder": "06XXXXXXXX",
+    "description": "Description (optionnel)",
+    "descriptionPlaceholder": "Votre message...",
+    "descriptionNote": "Précisez brièvement le motif de votre demande. Ne transmettez pas d'informations médicales sensibles.",
+    "consentNote": "En envoyant ce formulaire, vous acceptez que vos coordonnées soient utilisées uniquement pour vous recontacter au sujet de votre demande.",
+    "submit": "Envoyer la demande",
+    "submitting": "Envoi en cours...",
+    "successTitle": "Demande envoyée !",
+    "successMessage": "Nous avons bien reçu votre demande. Nous vous contacterons très prochainement pour convenir d'un rendez-vous.",
+    "newRequest": "Nouvelle demande",
+    "errors": {
+      "fullNameRequired": "Le nom complet est requis",
+      "fullNameMin": "Le nom doit contenir au moins 2 caractères",
+      "phoneRequired": "Le numéro de téléphone est requis",
+      "phoneInvalid": "Numéro de téléphone invalide (ex: 06XXXXXXXX)",
+      "descriptionMax": "La description ne peut pas dépasser 500 caractères",
+      "serverError": "Une erreur est survenue. Veuillez réessayer."
+    }
+  },
+  "contact": {
+    "sectionTitle": "Contact & Localisation",
+    "phone": "Téléphone",
+    "phoneValue": "+212 6 [À CONFIRMER]",
+    "address": "Adresse",
+    "addressValue": "[Clinique À CONFIRMER], [Ville À CONFIRMER], Maroc",
+    "hours": "Horaires",
+    "hoursValue": "Lun - Ven : 9h - 18h\nSam : 9h - 13h",
+    "callNow": "Appeler maintenant",
+    "whatsappContact": "Contacter sur WhatsApp",
+    "directions": "Voir sur Google Maps",
+    "toConfirm": "Information à confirmer",
+    "mapUnavailable": "Localisation à confirmer",
+    "mapTitle": "Localisation du cabinet"
+  },
+  "footer": {
+    "tagline": "Votre santé, notre engagement.",
+    "links": "Liens utiles",
+    "followUs": "Suivez-nous",
+    "copyright": "© 2025 Dr. Ilham Boughaza. Tous droits réservés.",
+    "privacy": "Politique de confidentialité",
+    "admin": "Espace admin",
+    "noSocial": "Aucun réseau social configuré pour le moment."
+  },
+  "admin": {
+    "role": "Administrateur",
+    "login": {
+      "title": "Connexion",
+      "subtitle": "Accédez à votre espace administrateur",
+      "username": "Email ou identifiant",
+      "password": "Mot de passe",
+      "submit": "Se connecter",
+      "submitting": "Connexion...",
+      "help": "Accès réservé au personnel du cabinet.",
+      "errors": {
+        "usernameRequired": "L'identifiant est requis",
+        "passwordRequired": "Le mot de passe est requis",
+        "invalidCredentials": "Identifiant ou mot de passe incorrect",
+        "serverError": "Connexion impossible. Vérifiez votre réseau et réessayez."
+      }
+    },
+    "sidebar": {
+      "dashboard": "Tableau de bord",
+      "requests": "Demandes",
+      "logout": "Déconnexion",
+      "openMenu": "Ouvrir le menu",
+      "navigation": "Navigation administrateur"
+    },
+    "dashboard": {
+      "title": "Tableau de bord",
+      "subtitle": "Vue d'ensemble de votre activité",
+      "totalRequests": "Total demandes",
+      "pending": "En attente",
+      "confirmed": "Confirmées",
+      "refused": "Refusées",
+      "recentRequests": "Demandes récentes",
+      "viewAll": "Voir tout",
+      "chartTitle": "Évolution des demandes",
+      "chartAria": "Graphique du nombre de demandes sur les {{count}} derniers jours",
+      "chartEmpty": "Aucune demande sur cette période.",
+      "periodDays": "{{count}} j"
+    },
+    "requests": {
+      "title": "Gestion des demandes",
+      "subtitle": "Consultez et gérez l'ensemble des demandes de rendez-vous reçues",
+      "search": "Rechercher par nom ou téléphone...",
+      "filter": "Filtrer",
+      "all": "Toutes",
+      "pending": "En attente",
+      "confirmed": "Confirmées",
+      "refused": "Refusées",
+      "columns": {
+        "patient": "Patiente",
+        "phone": "Téléphone",
+        "description": "Description",
+        "date": "Date",
+        "status": "Statut",
+        "actions": "Actions"
+      },
+      "noResults": "Aucune demande trouvée",
+      "viewDetail": "Voir le détail"
+    },
+    "requestDetail": {
+      "title": "Détail de la demande",
+      "back": "Retour",
+      "changeStatus": "Modifier le statut",
+      "confirm": "Confirmer",
+      "refuse": "Refuser",
+      "pending": "En attente",
+      "requestDate": "Date de la demande",
+      "lastUpdate": "Dernière mise à jour",
+      "requestNumber": "Demande #{{id}}",
+      "currentStatus": "Statut actuel",
+      "noDescription": "Aucun motif précisé."
+    },
+    "status": {
+      "EN_ATTENTE": "En attente",
+      "CONFIRMEE": "Confirmée",
+      "REFUSEE": "Refusée"
+    }
+  },
+  "privacy": {
+    "title": "Politique de confidentialité",
+    "lastUpdated": "Dernière mise à jour : novembre 2026",
+    "intro": "La protection de vos données personnelles est une priorité. Cette page explique quelles informations sont collectées via ce site, pourquoi elles le sont et quels sont vos droits, conformément à la loi marocaine n° 09-08 relative à la protection des personnes physiques à l'égard du traitement des données à caractère personnel.",
+    "sections": {
+      "data": {
+        "title": "1. Données collectées",
+        "body": "Le formulaire de demande de rendez-vous collecte uniquement : votre nom complet, votre numéro de téléphone et, si vous le souhaitez, une courte description du motif de votre demande. Aucun compte patient n'est créé. Aucune donnée médicale sensible n'est demandée."
+      },
+      "purpose": {
+        "title": "2. Finalité du traitement",
+        "body": "Ces données sont utilisées uniquement pour permettre au cabinet de vous recontacter et de convenir d'un rendez-vous. Elles ne servent à aucune prospection commerciale et ne sont pas utilisées à d'autres fins."
+      },
+      "legal": {
+        "title": "3. Base légale et consentement",
+        "body": "Le traitement repose sur votre consentement, exprimé par l'envoi volontaire du formulaire. Vous pouvez retirer votre consentement à tout moment en contactant le cabinet."
+      },
+      "retention": {
+        "title": "4. Durée de conservation",
+        "body": "Les demandes sont conservées pendant la durée nécessaire au traitement de votre demande et à la gestion du rendez-vous. Elles sont ensuite supprimées ou anonymisées lorsque leur conservation n'est plus nécessaire."
+      },
+      "recipients": {
+        "title": "5. Destinataires",
+        "body": "Les informations sont accessibles uniquement à la médecin et, le cas échéant, au personnel strictement concerné par la prise de rendez-vous. Elles ne sont ni vendues ni transmises à des tiers à des fins commerciales."
+      },
+      "rights": {
+        "title": "6. Vos droits",
+        "body": "Vous disposez d'un droit d'accès, de rectification, d'opposition et, lorsque la loi le permet, de suppression de vos données. Pour exercer ces droits, contactez le cabinet en utilisant les coordonnées indiquées sur le site."
+      },
+      "security": {
+        "title": "7. Sécurité",
+        "body": "L'accès à l'espace administrateur est protégé par une authentification. Les échanges avec le serveur doivent être chiffrés (HTTPS) en production. Des mesures techniques et organisationnelles raisonnables sont mises en œuvre pour protéger vos données contre tout accès non autorisé."
+      },
+      "cookies": {
+        "title": "8. Cookies et stockage local",
+        "body": "Le site n'utilise pas de cookies publicitaires ni de traceurs analytiques. Le navigateur peut conserver votre préférence de langue et, pour l'administrateur uniquement, un jeton de session limité à l'onglet ouvert."
+      },
+      "cndp": {
+        "title": "9. Autorité de contrôle",
+        "body": "Conformément à la loi n° 09-08, vous pouvez adresser une réclamation à la Commission Nationale de contrôle de la protection des Données à caractère Personnel (CNDP) si vous estimez que vos droits ne sont pas respectés."
+      }
+    },
+    "contactTitle": "Contact pour la protection des données",
+    "contactBody": "Pour toute question ou pour exercer vos droits, vous pouvez contacter le cabinet à l'adresse suivante :",
+    "medicalDataNote": "Important : merci de ne pas transmettre d'informations médicales détaillées via ce formulaire. Le motif de contact doit rester général ; les informations médicales seront abordées directement avec la médecin."
+  },
+  "common": {
+    "loading": "Chargement...",
+    "error": "Une erreur est survenue",
+    "retry": "Réessayer",
+    "close": "Fermer",
+    "save": "Enregistrer",
+    "cancel": "Annuler",
+    "confirm": "Confirmer",
+    "delete": "Supprimer",
+    "edit": "Modifier",
+    "view": "Voir",
+    "back": "Retour",
+    "pagination": "Pagination",
+    "paginationSummary": "{{first}}–{{last}} sur {{total}} demandes",
+    "previous": "Précédent",
+    "next": "Suivant",
+    "pageOf": "Page {{page}} / {{total}}"
+  }
+}

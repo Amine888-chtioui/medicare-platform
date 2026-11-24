@@ -31,3 +31,6 @@ desktop.ini
 
 # Temporary files
 *.tmp
+
+# Local tools
+maven/
