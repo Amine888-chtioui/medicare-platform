@@ -99,15 +99,14 @@ TiDB Cloud Serverless fournit une instance MySQL 8.0 managée, sécurisée par T
    - Cliquez sur **Create Web Service**.
    - Suivez les logs de compilation et de démarrage.
    - Une fois le statut **Live**, testez le endpoint de santé dans votre navigateur :
-     `https://medicare-api.onrender.com/api/health`
+     `https://medicare-api.onrender.com/api/public/health`
      Réponse attendue :
      ```json
-     {"status":"UP","app":"MediCare Platform","version":"1.0.0"}
+     {"status":"UP","application":"MediCare Platform","version":"1.0.0"}
      ```
 
 > [!NOTE] Comportement de mise en veille (Spin down)
-> Sur le plan gratuit de Render, le conteneur s'endort après 15 minutes d'inactivité. La première requête suivante peut prendre entre 30 et 50 secondes pour réveiller le conteneur. Les requêtes suivantes répondent immédiatement (< 100 ms).
-> Un service gratuit de monitoring comme [UptimeRobot](https://uptimerobot.com/) peut être configuré pour sonder `/api/health` toutes les 14 minutes afin d'éviter l'endormissement si souhaité.
+> Sur le plan gratuit de Render, le conteneur s'endort après 15 minutes d'inactivité. La première requête suivante peut prendre entre 30 et 50 secondes pour réveiller le conteneur. Les requêtes suivantes répondent immédiatement (< 100 ms). Ce comportement est normal et conforme aux conditions d'utilisation de l'offre gratuite.
 
 ---
 

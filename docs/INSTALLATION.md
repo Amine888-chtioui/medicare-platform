@@ -52,7 +52,7 @@ Tous les conteneurs (`medicare-mysql`, `medicare-backend`, `medicare-frontend`) 
 ### 5. Accéder à l'application
 - **Site public & Dashboard Admin** : [http://localhost](http://localhost) (Port 80)
 - **API Backend directe** : [http://localhost:8080](http://localhost:8080)
-- **Endpoint de santé** : [http://localhost:8080/api/health](http://localhost:8080/api/health)
+- **Endpoint de santé** : [http://localhost:8080/api/public/health](http://localhost:8080/api/public/health)
 - **Base de données MySQL** : `localhost:3306` (User: `medicare_user`, Password: `medicare_pass_2026`)
 
 ### 6. Arrêter les conteneurs
@@ -116,7 +116,7 @@ docker compose down -v
    ```
    Started MedicarePlatformApplication in X.XXX seconds
    ```
-   Testez dans votre navigateur : [http://localhost:8080/api/health](http://localhost:8080/api/health)
+   Testez dans votre navigateur : [http://localhost:8080/api/public/health](http://localhost:8080/api/public/health)
 
 ### 3. Démarrage du Frontend (React / Vite)
 

@@ -13,12 +13,9 @@ La première visite du site le matin ou après un moment d'inactivité prend 30 
 Sur le plan gratuit de **Render**, le conteneur s'endort après 15 minutes sans requête pour économiser les ressources serveur.
 
 ### Solutions
-1. **Informer l'utilisateur** : Le frontend affiche un indicateur de chargement propre ("Connexion au serveur en cours...") pour éviter tout sentiment de blocage.
-2. **Maintenir le serveur éveillé (Keep-Warm)** :
-   - Créez un compte gratuit sur [UptimeRobot](https://uptimerobot.com/) ou [Cron-Job.org](https://cron-job.org/).
-   - Ajoutez un moniteur HTTP vers votre URL : `https://medicare-api.onrender.com/api/health`.
-   - Définissez l'intervalle de sonde à **14 minutes**.
-   - Le conteneur restera ainsi toujours actif pendant les heures ouvrables.
+1. **Informer l'utilisateur** : Le frontend affiche un indicateur de chargement propre ("Connexion au serveur en cours...") pour éviter tout sentiment de blocage lors du réveil du conteneur.
+2. **Respect des conditions d'utilisation de Render Free** : Ce comportement de mise en veille fait partie des limites normales de l'offre gratuite de test (750 heures/mois). Pour une application en production sans temps de réveil, il est recommandé de passer sur une instance payante dédiée (Starter) plutôt que d'utiliser des pings automatisés.
+3. **Vérification manuelle de disponibilité** : Vous pouvez vérifier manuellement que le serveur répond via `https://medicare-api.onrender.com/api/public/health`.
 
 ---
 

@@ -187,7 +187,7 @@ npm run build
     - Backend API : Render.com Web Service Free (512 Mo RAM, conteneur Docker Linux, port dynamique `$PORT`, mise en veille après 15 min réveillable par ping).
     - Frontend SPA : Vercel / Cloudflare Pages (CDN mondial statique illimité, SSL automatique, réécriture SPA pour React Router).
 - **Conteneurisation Docker complète** :
-  - `backend/Dockerfile` : Build multi-stage (Maven 3.9 + Eclipse Temurin JDK 21 Alpine -> JRE 21 Alpine allégé, utilisateur non-root `medicare`, healthcheck `/api/health`, gestion dynamique de la RAM conteneurisée).
+  - `backend/Dockerfile` : Build multi-stage (Maven 3.9 + Eclipse Temurin JDK 21 Alpine -> JRE 21 Alpine allégé, utilisateur non-root `medicare`, healthcheck `/api/public/health`, gestion dynamique de la RAM conteneurisée).
   - `frontend/Dockerfile` : Build multi-stage (Node 20 Alpine -> Nginx Alpine, compression gzip, en-têtes de sécurité et fallback SPA).
   - `frontend/nginx.conf` : Configuration de production Nginx avec fallback `try_files $uri $uri/ /index.html;` et mise en cache des assets statiques.
   - `docker-compose.yml` : Orchestration locale des 3 services (`db` MySQL 8.0 avec persistance de volume et healthcheck, `backend`, `frontend`) reliés par un réseau bridge dédié `medicare-network`.

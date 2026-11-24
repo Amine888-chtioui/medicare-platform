@@ -35,9 +35,9 @@ ENV PORT=8080
 ENV SPRING_PROFILES_ACTIVE=prod
 EXPOSE 8080
 
-# Health check against /api/health
+# Health check against /api/public/health
 HEALTHCHECK --interval=30s --timeout=5s --start-period=45s --retries=3 \
-  CMD wget --quiet --tries=1 --spider http://localhost:${PORT:-8080}/api/health || exit 1
+  CMD wget --quiet --tries=1 --spider http://localhost:${PORT:-8080}/api/public/health || exit 1
 
 # Launch JVM with container-aware memory limits
 ENTRYPOINT ["java", \
