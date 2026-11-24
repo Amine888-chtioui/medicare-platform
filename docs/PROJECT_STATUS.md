@@ -76,7 +76,7 @@ gynécologue-obstétricienne au Maroc.
 | 4 | Admin authentication + dashboard + request management | ✅ Done |
 | 5 | Frontend / backend integration | ✅ Done |
 | 6 | Quality, security, performance, tests, privacy | ✅ Done |
-| 7 | Deployment + documentation | ⏳ Pending authorization |
+| 7 | Deployment + documentation | ✅ Done |
 
 ## 5. Feature checklist
 
@@ -179,3 +179,50 @@ npm run build
 - **Vérification finale** :
   - Compilation backend (`mvn test`) : 55/55 tests validés.
   - Compilation frontend (`npm run build`) : TypeScript strict validé, build Vite réussi en 5.8s.
+
+### Phase 7 : Déploiement Gratuit et Documentation
+- **Stratégie d'hébergement gratuit (0$ - Sans carte bancaire)** :
+  - Évaluation et sélection de la topologie d'hébergement 100% gratuite et pérenne :
+    - Base de données : TiDB Cloud Serverless (5 Go de stockage MySQL 8.0 gratuit à vie, SSL obligatoire, haute disponibilité, aucune mise en veille).
+    - Backend API : Render.com Web Service Free (512 Mo RAM, conteneur Docker Linux, port dynamique `$PORT`, mise en veille après 15 min réveillable par ping).
+    - Frontend SPA : Vercel / Cloudflare Pages (CDN mondial statique illimité, SSL automatique, réécriture SPA pour React Router).
+- **Conteneurisation Docker complète** :
+  - `backend/Dockerfile` : Build multi-stage (Maven 3.9 + Eclipse Temurin JDK 21 Alpine -> JRE 21 Alpine allégé, utilisateur non-root `medicare`, healthcheck `/api/health`, gestion dynamique de la RAM conteneurisée).
+  - `frontend/Dockerfile` : Build multi-stage (Node 20 Alpine -> Nginx Alpine, compression gzip, en-têtes de sécurité et fallback SPA).
+  - `frontend/nginx.conf` : Configuration de production Nginx avec fallback `try_files $uri $uri/ /index.html;` et mise en cache des assets statiques.
+  - `docker-compose.yml` : Orchestration locale des 3 services (`db` MySQL 8.0 avec persistance de volume et healthcheck, `backend`, `frontend`) reliés par un réseau bridge dédié `medicare-network`.
+  - `.dockerignore` configuré pour le backend, le frontend et la racine.
+- **Routage SPA et variables d'environnement** :
+  - Ajout de `frontend/public/_redirects` pour Netlify et Cloudflare Pages.
+  - Ajout de `frontend/vercel.json` pour Vercel.
+  - Support de la variable `PORT` aux côtés de `SERVER_PORT` dans `application.properties` pour Render / Koyeb (`server.port=${PORT:${SERVER_PORT:8080}}`).
+  - Base URL configurable sans slash final (`VITE_API_BASE_URL`).
+- **Schéma relationnel officiel & Initialisation** :
+  - Création de `database/schema.sql` (compatible MySQL 8.0 et TiDB Serverless, encodage `utf8mb4_unicode_ci`, tables `admins`, `patients`, `appointment_requests`, `admin_notifications` avec clés étrangères et index de performance).
+  - Documentation de la création sécurisée du compte administrateur avec hachage BCrypt.
+- **Suite documentaire complète produite** :
+  - `README.md` : Page d'accueil professionnelle avec badges, architecture, fonctionnalités et guide de démarrage rapide.
+  - `docs/INSTALLATION.md` : Guide d'installation en local (avec Docker Compose en 2 minutes ou sans Docker avec XAMPP/Java 21).
+  - `docs/CONFIGURATION.md` : Dictionnaire exhaustif de toutes les variables d'environnement Backend et Frontend.
+  - `docs/DEPLOYMENT.md` : Guide de mise en ligne pas-à-pas 100% gratuit (TiDB Cloud + Render + Cloudflare Pages) avec protocole de vérification mobile et PC.
+  - `docs/DATABASE.md` : Schéma entité-association Mermaid, dictionnaire des tables, colonnes, index et conformité Loi 09-08 / CNDP.
+  - `docs/BACKUP_RESTORE.md` : Procédures `mysqldump` quotidienne automatisée (Linux/Windows), compression gzip et restauration.
+  - `docs/TROUBLESHOOTING.md` : Résolution des problèmes fréquents (Cold start, erreurs CORS, 404 SPA au rechargement, timeouts SSL, rate limiting 429).
+  - `docs/PROJECT_STATUS.md` : Journal consolidé du projet.
+
+### Audit Final Pré-Déploiement (Post Phase 7)
+- **Anomalie critique corrigée — Vercel Hobby ToS** :
+  - Le plan Vercel Hobby interdit explicitement l'usage commercial dans ses conditions d'utilisation. Un cabinet médical constitue un usage commercial. Vercel Hobby a été retiré des recommandations et remplacé par **Cloudflare Pages Free** (usage commercial autorisé par les ToS, DPA inclus dans les conditions self-serve, CDN mondial, SSL automatique).
+- **Anomalie corrigée — Statuts erronés dans la documentation** :
+  - `docs/DATABASE.md` et `docs/DEPLOYMENT.md` contenaient des valeurs de statut inexistantes (`CONFIRME`, `ANNULE`, `ARCHIVE`). Corrigées vers les valeurs réelles de l'enum Java : `EN_ATTENTE`, `CONFIRMEE`, `REFUSEE`.
+- **Anomalie corrigée — Contrainte CHECK TiDB Serverless** :
+  - La contrainte `CHECK (status IN ('EN_ATTENTE', 'CONFIRMEE', 'REFUSEE'))` est parsée mais **non garantie appliquée** sur TiDB Cloud Serverless car `tidb_enable_check_constraint` est `OFF` par défaut et `SET GLOBAL` requiert des privilèges `SUPER` non accordés sur la tier gratuite. La validation primaire est assurée par l'enum Java Spring Boot. Schéma et documentation mis à jour avec avertissements et procédure de test.
+- **DPA — Clarification des affirmations par fournisseur** (conditions réellement vérifiées) :
+  - **Cloudflare Pages Free** : DPA inclus automatiquement dans les conditions self-serve (SCCs UE, EU-US DPF). ✅ Vérifié.
+  - **Render.com** : DPA disponible et signable. Certifié EU-US Data Privacy Framework. Render déconseille lui-même le Free Tier pour les applications de production traitant des données personnelles. ✅ DPA disponible, ⚠️ Free Tier non recommandé pour données réelles.
+  - **TiDB Cloud (PingCAP)** : DPA disponible dans le portail legal/trust de PingCAP, applicable dès l'acceptation des CSA. Sous-traitants listés publiquement. ✅ Vérifié.
+  - **Loi marocaine 09-08 / CNDP** : L'existence d'un DPA avec un fournisseur international ne remplace pas les obligations de déclaration à la CNDP ni l'analyse de licéité du transfert transfrontalier. Ces démarches restent obligatoires avant toute mise en production réelle.
+- **Pings anti-veille — Limitation documentée** :
+  - L'AUP de Render interdit d'abuser de l'infrastructure "pour éviter des obligations financières". Un ping 24h/24 consommerait 744h/750h disponibles. La recommandation de ping UptimeRobot a été supprimée de la documentation principale ; le comportement de cold start (~40-50s) est acceptable pour un usage diurne de cabinet médical.
+- **Render Free — Statut clarifié dans DEPLOYMENT.md** :
+  - Ajout d'un avertissement `[!CAUTION]` explicite indiquant que Render Free est destiné aux tests et à la validation initiale, et ne convient pas au traitement de vraies données de patientes en production.
